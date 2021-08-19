@@ -1,0 +1,3 @@
+This is currently a unstable build of this Instagram bot for Pepper and Nao
+
+Installation instructions are following soon...
