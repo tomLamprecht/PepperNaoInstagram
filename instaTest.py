@@ -11,6 +11,7 @@ import os
 import comments
 
 #-----------------------------------------MOVEMENT FUNCTIONS------------------------------------------------------------
+# test comment
 
 
 def moveFunction2(session):
