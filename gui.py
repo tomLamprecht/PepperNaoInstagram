@@ -83,7 +83,8 @@ class GUIThread:
         background_label.place(x=0, y=0, relwidth=1, relheight=1)
 
         #Textbox
-        Label(self.window, text="Write your Instagram Name here:", bg="white", fg=colorCodeOrange, font = "none 24 bold").grid(row=0, column=0,sticky=W)
+        self.textbox = Label(self.window, text="Write your Instagram Name here:", bg="white", fg=colorCodeOrange, font = "none 24 bold")
+        self.textbox.grid(row=0, column=0,sticky=W)
 
         #Entrybox
         sv = StringVar()
@@ -93,7 +94,8 @@ class GUIThread:
         self.textentry.focus()
 
         #Submit Button
-        Button(self.window,text="SUBMIT",width=10,font=50,fg = colorCodeOrange, activeforeground = colorCodeOrange ,command=self.submit).grid(row=2,column=0,sticky=W)
+        self.submitButton = Button(self.window,text="SUBMIT",width=10,font=50,fg = colorCodeOrange, activeforeground = colorCodeOrange ,command=self.submit)
+        self.submitButton.grid(row=2,column=0,sticky=W)
 
         #Exit Button
         Button(self.window,text="EXIT", font= "none 15 bold", bg = "gray75", command=self.exitClick).place(relx=0.95, rely=0, relwidth=0.05, relheight=0.05)
@@ -103,12 +105,24 @@ class GUIThread:
 
         self.window.attributes("-fullscreen", True)
 
+        self.input_completed = False
         #update loop
         while True:
           try:
+
+            try:
+                if(self.input_completed):
+                    self.textentry.destroy()
+                    self.textbox.config(text= 'Nutzername akzeptiert!')
+                    self.submitButton.destroy()
+            except Exception as e:
+                print(e)
+
             self.window.update_idletasks()
             self.window.update()
+            
           except Exception, e:
+              print(e)
               break #The window got probably Destroyed and therefore cant be updated anymore, Instead of Throwing an Exception just end the run method at this point
           if (self.readyToDestroy):
               self.window.destroy()
