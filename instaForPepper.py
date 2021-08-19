@@ -111,6 +111,7 @@ while(not correctInput):
     except Exception, e:
       animatedSpeech.say("Oh, anscheinend kann ich dich nicht auf Ins ta gram finden. Willst du es nochmal versuchen?")
   inputGUI.submitted = False
+inputGUI.input_completed = True
 input_id = input_info['user']['pk']
 input_fullname = input_info['user']['full_name']
 input_isPrivate = input_info['user']['is_private']

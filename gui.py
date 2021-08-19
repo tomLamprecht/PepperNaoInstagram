@@ -116,7 +116,7 @@ class GUIThread:
                     self.textbox.config(text= 'Nutzername akzeptiert!')
                     self.submitButton.destroy()
             except Exception as e:
-                print(e)
+                pass
 
             self.window.update_idletasks()
             self.window.update()
