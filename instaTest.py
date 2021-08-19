@@ -178,13 +178,14 @@ t.start()
 tts.setParameter("speed", 70)
 
 ##HERE THE DIALOG BOX
+'''
 dialog.start()
 
 while(not dialog.done):
   pass
 
-dialog.stopTopic()
-
+#dialog.stopTopic()
+'''
 animatedSpeech.say("Das freut mich zu hoeren. Wenn du willst, dass ich dir ein Kommentar auf ihns ta gram da lasse, schreib deinen Namen auf den Laptop")
 
 
@@ -306,7 +307,7 @@ except Exception, e:
   
   
 commentGen = comments.Comments()
-commentGen.postComment(api, input)
+commentGen.postComment(api, input_name)
 api.post_like(latestMediaId)
 
 #api.post_comment(latestMediaId, "Hello " + input_fullname + "This Is Nao. Beep Boop!")
