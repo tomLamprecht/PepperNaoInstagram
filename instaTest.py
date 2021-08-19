@@ -11,8 +11,7 @@ import os
 import comments
 
 #-----------------------------------------MOVEMENT FUNCTIONS------------------------------------------------------------
-# test comment
-#test comment 2
+
 
 
 def moveFunction2(session):
@@ -161,12 +160,13 @@ api = Client(user_name, password, settings = cached_settings)
 goodbyes = farewells.Farewells()
 
 session = qi.Session()
-session.connect("194.95.223.91:9559")
+robot_ip = "192.168.178.93"
+session.connect(robot_ip+":9559")
 animatedSpeech = session.service("ALAnimatedSpeech")
 postureService = session.service("ALRobotPosture")
 tts = session.service("ALTextToSpeech")
 dialog = dia.Dialog(session)
-aup = ALProxy("ALAudioPlayer", "194.95.223.91", 9559)
+aup = ALProxy("ALAudioPlayer", robot_ip, 9559)
 
 tts.setLanguage("German")
 
