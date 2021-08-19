@@ -12,6 +12,7 @@ import comments
 
 #-----------------------------------------MOVEMENT FUNCTIONS------------------------------------------------------------
 # test comment
+#test comment 2
 
 
 def moveFunction2(session):
