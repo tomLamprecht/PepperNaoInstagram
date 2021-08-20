@@ -144,6 +144,8 @@ def interpretInstaPic(shortcode):
     print(results[1]['prediction_translated'] + " " + str(results[1]['probability']) + '%')
     print(results[0]['prediction_translated'] + " " + str(results[0]['probability']) + '%')
 
+    return results[0]
+
 user_name = 'tomtestaccount1234'
 password = '09333575'
 userid = "1393354621"
@@ -165,8 +167,11 @@ session.connect(robot_ip+":9559")
 animatedSpeech = session.service("ALAnimatedSpeech")
 postureService = session.service("ALRobotPosture")
 tts = session.service("ALTextToSpeech")
+speechReco = session.service("ALSpeechRecognition")
+memory = session.service("ALMemory")
 dialog = dia.Dialog(session)
 aup = ALProxy("ALAudioPlayer", robot_ip, 9559)
+asr = ALProxy("ALSpeechRecognition", robot_ip, 9559)
 
 tts.setLanguage("German")
 
@@ -177,15 +182,18 @@ t = Thread(target = inputGUI.run)
 t.start()
 tts.setParameter("speed", 70)
 
+
+
+
 ##HERE THE DIALOG BOX
-'''
+
 dialog.start()
 
 while(not dialog.done):
   pass
 
 #dialog.stopTopic()
-'''
+
 animatedSpeech.say("Das freut mich zu hoeren. Wenn du willst, dass ich dir ein Kommentar auf ihns ta gram da lasse, schreib deinen Namen auf den Laptop")
 
 
@@ -308,7 +316,7 @@ except Exception, e:
   
   
 commentGen = comments.Comments()
-commentGen.postComment(api, input_name)
+#commentGen.postComment(api, input_name)
 api.post_like(latestMediaId)
 
 #api.post_comment(latestMediaId, "Hello " + input_fullname + "This Is Nao. Beep Boop!")
@@ -322,6 +330,54 @@ else:
     number = int(input_follower_count/100) * 100
     animatedSpeech.say("WAS?, du hast ueber " + str(number) + " Abonennten? Das ist sehr beeindruckend!\\pau=800\\ Nichts desto trotz: ")
     
+
+
+animatedSpeech.say("Moechtest du vielleicht noch ein kleines Spiel spielen?")
+
+vocabulary = ["ja", "nein"]
+asr.pause(True)
+asr.setVocabulary(vocabulary, True)
+asr.pause(False)
+
+class Callback:
+
+  def __init__(self):
+    self.answered = False
+
+  def on_answered(self,value):
+    self.answered = True
+    if(str(value).__contains__("ja")):
+      self.wantsToPlay = True
+    else:
+      self.wantsToPlay = False
+
+subscriber = memory.subscriber("WordRecognized")
+callback = Callback()
+subscriber.signal.connect(callback.on_answered)
+asr.subscribe("ImageReco_Fragen")
+while(not callback.answered):
+  pass
+asr.unsubscribe("ImageReco_Fragen")
+
+
+if(callback.wantsToPlay):
+  animatedSpeech.say("Okay, schau auf dein neustes Ins ta gram Bild. \\pau=500\\ Ich versuche herauszufinden was auf den Bild zu sehen ist.")
+  animatedSpeech.say("Dafuer werde ich aber ein bisschen Zeit brauchen also warte bitte kurz.")
+  link = str(api.media_permalink(latestMediaId)['permalink'])
+  beg_search = 'https://www.instagram.com/p/'
+  beg = link.index(beg_search)+len(beg_search)
+  end = link.index('/?utm', beg)
+  shortcode = link[beg : end]
+  guess = interpretInstaPic(shortcode)
+  if(guess['probability'] >= 99):
+    animatedSpeech.say("Oh da bin ich mir recht sicher!")
+  else:
+    animatedSpeech.say("Das war echt nicht leicht. Aber")
+  animatedSpeech.say("Ich glaube auf dem Bild befindet sich: \\pau=200\\" + guess['prediction_translated'])
+  time.sleep(2)
+  animatedSpeech.say("Nichts desto trotz: ")
+else:
+  animatedSpeech.say("Okay Schade. ")
 
 tts.setLanguage("English")
 animatedSpeech.say(goodbyes.randomFarewell())
