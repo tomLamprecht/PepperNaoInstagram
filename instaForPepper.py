@@ -56,7 +56,7 @@ session.connect(robotIP+ ":9559")
 animatedSpeech = session.service("ALAnimatedSpeech")
 postureService = session.service("ALRobotPosture")
 tts = session.service("ALTextToSpeech")
-dialog = dia.Dialog(session)
+dialog = dia.Dialog(session, robotIP)
 tabletJS = tjs.TabletJS(session)
 aup = ALProxy("ALAudioPlayer", robotIP , 9559)
 
@@ -163,7 +163,7 @@ if(not input_isPrivate):
 else:
   animatedSpeech.say("Zuerst musst du jedoch meine Anfrage bestaetigen, " + input_fullname)
   api.friendships_create(input_id)
-  aup.post.playFile("/data/home/nao/music.mp3")
+  aup.post.playFile("/data/home/nao/music/music.mp3")
   done = False
   first = True
   while(not done):

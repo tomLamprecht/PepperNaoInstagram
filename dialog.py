@@ -7,10 +7,12 @@
 import qi
 import time
 import thread as th
+from naoqi import ALProxy
 
 class Dialog:
 
-    def  __init__(self, session):
+    def  __init__(self, session, robot_ip):
+        self.robot_ip = robot_ip
         self.done = False
         self.session = session
         self.ALDialog = session.service("ALDialog")
@@ -21,6 +23,11 @@ class Dialog:
             pass
         else:
             self.memory.declareEvent("HoldHandsAnswered")
+
+        if "NyanCat" in self.memory.getEventList():
+            pass
+        else:  
+            self.memory.declareEvent("NyanCat")
 
         if "HasInstaAnswered" in self.memory.getEventList():
             pass
@@ -50,6 +57,12 @@ class Dialog:
 
     def on_userinput(self, value):
         print(value)
+
+    def nyancat_callback(self, value):
+        aup = ALProxy("ALAudioPlayer", self.robot_ip, 9559)
+        aup.post.playFile("/data/home/nao/music/nyan_cat.mp3")
+        time.sleep(10)
+        aup.stopAll()
 
     def on_answered(self, value):
         #OUTDATED
@@ -93,11 +106,11 @@ class Dialog:
 
                     'u: ([e:FrontTactilTouched e:MiddleTactilTouched e:RearTactilTouched]) Sach ma ich fass doch auch nicht "deinen" Kopf an oder?!\n'
                     'u: ([e:LeftBumperPressed e:RightBumperPressed e:BackBumperPressed]) Autsch! Was soll das denn?!\n'
-                    'u: ([e:HandLeftBackTouched e:HandLeftLeftTouched e:HandLeftRightTouched e:HandRightBackTouched e:HandRightLeftTouched e:HandRightRightTouched]) Willst du Haendchen halten?\n'
+                    'u: ([e:HandLeftLeftTouched e:HandRightRightTouched]) Willst du Haendchen halten?\n'
                         'u1: ([ja yes jo jap]) okay, gib mir deine Hand.^call(ALMemory.raiseEvent("HoldHandsAnswered",0))\n'
                         'u1: ([nein ne noe]) dann halt nicht.\n'
-                    'u: (exit) Tschuess. ^call(ALMemory.raiseEvent("HasInstaAnswered", False))\n')
-                    
+                    'u: (exit) Tschuess. ^call(ALMemory.raiseEvent("HasInstaAnswered", False))\n'
+                    'u: (neien kät) LOS GEHTS ^call(ALMemory.raiseEvent("NyanCat", True))\n')
                    # 'u:(e:Dialog/NotUnderstood) Es tut mir leid, das hab ich nicht verstanden. Kannst du es vielleicht nocheinmal für mich wiederholen? \n')
         
         self.memory = self.session.service("ALMemory")
@@ -113,6 +126,9 @@ class Dialog:
 
         self.subscriber4 = self.memory.subscriber("HasInstaAnswered")
         self.subscriber4.signal.connect(self.hasInstaAnswered_callback)
+
+        self.subscriber5 = self.memory.subscriber("NyanCat")
+        self.subscriber5.signal.connect(self.nyancat_callback)
 
         
         # Loading the topics directly as text strings
@@ -130,13 +146,13 @@ class Dialog:
 
 
 
-#session = qi.Session()
-#session.connect("10.30.4.8:9559")
+session = qi.Session()
+session.connect("194.95.223.91:9559")
 #session.service("ALRobotPosture").goToPosture("StandInit",10)
-#dia = Dialog(session)
-#dia.start()
-#raw_input("as")
-#dia.stopTopic()
+dia = Dialog(session, "194.95.223.91")
+dia.start()
+raw_input("as")
+dia.stopTopic()
 
 #while(not dia.done):
 #    pass

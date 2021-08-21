@@ -163,13 +163,14 @@ goodbyes = farewells.Farewells()
 
 session = qi.Session()
 robot_ip = "192.168.178.93"
+robot_ip = "10.30.4.31"
 session.connect(robot_ip+":9559")
 animatedSpeech = session.service("ALAnimatedSpeech")
 postureService = session.service("ALRobotPosture")
 tts = session.service("ALTextToSpeech")
 speechReco = session.service("ALSpeechRecognition")
 memory = session.service("ALMemory")
-dialog = dia.Dialog(session)
+dialog = dia.Dialog(session, robot_ip)
 aup = ALProxy("ALAudioPlayer", robot_ip, 9559)
 asr = ALProxy("ALSpeechRecognition", robot_ip, 9559)
 
@@ -268,7 +269,7 @@ if(not input_isPrivate):
 else:
   animatedSpeech.say("Zuerst musst du jedoch meine Anfrage bestaetigen, " + input_fullname)
   api.friendships_create(input_id)
-  aup.post.playFile("/data/home/nao/music.mp3")
+  aup.post.playFile("/data/home/nao/music/music.mp3")
   done = False
   first = True
   while(not done):
