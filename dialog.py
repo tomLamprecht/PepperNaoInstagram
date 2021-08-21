@@ -63,6 +63,7 @@ class Dialog:
         aup.post.playFile("/data/home/nao/music/nyan_cat.mp3")
         time.sleep(10)
         aup.stopAll()
+        aup.unloadAllFiles()
 
     def on_answered(self, value):
         #OUTDATED
@@ -146,13 +147,13 @@ class Dialog:
 
 
 
-session = qi.Session()
-session.connect("194.95.223.91:9559")
+#session = qi.Session()
+#session.connect("194.95.223.91:9559")
 #session.service("ALRobotPosture").goToPosture("StandInit",10)
-dia = Dialog(session, "194.95.223.91")
-dia.start()
-raw_input("as")
-dia.stopTopic()
+#dia = Dialog(session, "194.95.223.91")
+#dia.start()
+#raw_input("as")
+#dia.stopTopic()
 
 #while(not dia.done):
 #    pass

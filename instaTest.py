@@ -164,6 +164,7 @@ goodbyes = farewells.Farewells()
 session = qi.Session()
 robot_ip = "192.168.178.93"
 robot_ip = "10.30.4.31"
+robot_ip = "194.95.223.91"
 session.connect(robot_ip+":9559")
 animatedSpeech = session.service("ALAnimatedSpeech")
 postureService = session.service("ALRobotPosture")
@@ -177,6 +178,7 @@ asr = ALProxy("ALSpeechRecognition", robot_ip, 9559)
 tts.setLanguage("German")
 
 aup.stopAll()
+unloadAllFiles()
 postureService.goToPosture("Stand", 70)
 inputGUI = gui.GUIThread()
 t = Thread(target = inputGUI.run)
@@ -283,6 +285,7 @@ else:
             break
          else:
            aup.stopAll()
+           aup.unloadAllFiles()
            animatedSpeech.say("\\vol=100\\\\vct=65\\ Wie Kannst du nur?!")
            time.sleep(2)
            animatedSpeech.say("\\vct= 70\\ Mein Leben hat keinene Sinn mehr!")
@@ -293,6 +296,7 @@ else:
    first = False
     
 aup.stopAll()
+unloadAllFiles()
 tts.say("\\style=joyful\\ Ich folge dir jetzt!")
 tts.setLanguage("English")
 animatedSpeech.say("\\style=joyful\\ yea")
@@ -364,12 +368,15 @@ asr.unsubscribe("ImageReco_Fragen")
 if(callback.wantsToPlay):
   animatedSpeech.say("Okay, schau auf dein neustes Ins ta gram Bild. \\pau=500\\ Ich versuche herauszufinden was auf den Bild zu sehen ist.")
   animatedSpeech.say("Dafuer werde ich aber ein bisschen Zeit brauchen also warte bitte kurz.")
+  aup.post.playFile("/data/home/nao/music/music.mp3")
   link = str(api.media_permalink(latestMediaId)['permalink'])
   beg_search = 'https://www.instagram.com/p/'
   beg = link.index(beg_search)+len(beg_search)
   end = link.index('/?utm', beg)
   shortcode = link[beg : end]
   guess = interpretInstaPic(shortcode)
+  aup.stopAll()
+  unloadAllFiles()
   if(guess['probability'] >= 99):
     animatedSpeech.say("Oh da bin ich mir recht sicher!")
   else:
