@@ -317,7 +317,7 @@ except Exception, e:
   
   
 commentGen = comments.Comments()
-#commentGen.postComment(api, input_name)
+commentGen.postComment(api, input_name)
 api.post_like(latestMediaId)
 
 #api.post_comment(latestMediaId, "Hello " + input_fullname + "This Is Nao. Beep Boop!")

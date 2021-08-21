@@ -14,11 +14,11 @@ class Comments:
         comment_count = post_info['items'][0]['comment_count']
         if(comment_count == 0):
             return "Erster!"
-        return self.__randomComment(user_realname, likes, comment_count)
+        return self.__randomComment(user_realname, likes, comment_count, username)
 
 
-    def __randomComment(self, name, likes, comment_count):
-        liste = [(u" Hey, hübsches Bild ") +name , "Die " + str(likes) + " likes hast du mit dem Bild definitiv verdient!", u'Ich bin programmiert dir zu sagen dass deine Bilder schön sind aber das ist wirklich ein klasse Bild! :o', u'Das Bild ist so heiß ich glaube meine Motoren überhitzen!', u'']
+    def __randomComment(self, name, likes, comment_count, username):
+        liste = [(u" Hey, hübsches Bild @") +username , "Die " + str(likes) + " likes hast du mit dem Bild definitiv verdient!", u'Ich bin programmiert dir zu sagen dass deine Bilder schön sind aber das ist wirklich ein klasse Bild! :o @'+username, u'Das Bild ist so heiß ich glaube meine Motoren überhitzen! @'+username, u'Wunderschönes Bild! ich habe aber auch nichts anderes erwartet @' + username ]
         if (comment_count > 10):
             liste.append(u'Bereits ' + str(comment_count) + u' Kommentare??? Ich wünschte ich hätte soviele Freunde!')
         length = len(liste)
