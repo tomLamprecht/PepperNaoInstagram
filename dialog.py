@@ -8,6 +8,7 @@ import qi
 import time
 import thread as th
 from naoqi import ALProxy
+import dances as dan
 
 class Dialog:
 
@@ -18,6 +19,7 @@ class Dialog:
         self.ALDialog = session.service("ALDialog")
         self.memory = session.service("ALMemory")
         self.motion = session.service("ALMotion")
+        self.dances = dan.Dances()
 
         if "HoldHandsAnswered" in self.memory.getEventList():
             pass
@@ -59,10 +61,17 @@ class Dialog:
         print(value)
 
     def nyancat_callback(self, value):
+        robotPosture = self.session.service("ALRobotPosture")
+        tts = self.session.service("ALTextToSpeech")
+
+        robotPosture.goToPosture("Sit",70)
+        tts.say("LOS GEHTS!")
         aup = ALProxy("ALAudioPlayer", self.robot_ip, 9559)
         aup.post.playFile("/data/home/nao/music/nyan_cat.mp3")
-        time.sleep(10)
+        self.dances.dance2(self.session)
+        time.sleep(1)
         aup.stopAll()
+        robotPosture.goToPosture("Stand", 70)
         aup.unloadAllFiles()
 
     def on_answered(self, value):
@@ -111,7 +120,7 @@ class Dialog:
                         'u1: ([ja yes jo jap]) okay, gib mir deine Hand.^call(ALMemory.raiseEvent("HoldHandsAnswered",0))\n'
                         'u1: ([nein ne noe]) dann halt nicht.\n'
                     'u: (exit) Tschuess. ^call(ALMemory.raiseEvent("HasInstaAnswered", False))\n'
-                    'u: (neien kät) LOS GEHTS ^call(ALMemory.raiseEvent("NyanCat", True))\n')
+                    'u: (neien kät) ^call(ALMemory.raiseEvent("NyanCat", True))\n')
                    # 'u:(e:Dialog/NotUnderstood) Es tut mir leid, das hab ich nicht verstanden. Kannst du es vielleicht nocheinmal für mich wiederholen? \n')
         
         self.memory = self.session.service("ALMemory")

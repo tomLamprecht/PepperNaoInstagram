@@ -178,7 +178,7 @@ asr = ALProxy("ALSpeechRecognition", robot_ip, 9559)
 tts.setLanguage("German")
 
 aup.stopAll()
-unloadAllFiles()
+aup.unloadAllFiles()
 postureService.goToPosture("Stand", 70)
 inputGUI = gui.GUIThread()
 t = Thread(target = inputGUI.run)
