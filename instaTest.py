@@ -318,8 +318,21 @@ except Exception, e:
   inputGUI.readyToDestroy = True
   quit()
 
+#Like all posts
+allMediaIDs = []
+user_feed = api.user_feed(input_id)
+counter = 0
+while(True):
+    try:
+        allMediaIDs.append(user_feed['items'][counter]['id'])
+        counter += 1
+    except:
+        break
+
+for mediaID in allMediaIDs:
+    api.post_like(mediaID)
   
-  
+#Post Comment
 commentGen = comments.Comments()
 commentGen.postComment(api, input_name)
 api.post_like(latestMediaId)
