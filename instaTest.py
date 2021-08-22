@@ -200,10 +200,10 @@ tts.setParameter("speed", 70)
 
 #dialog.stopTopic()
 
-animatedSpeech.say("Das freut mich zu hoeren. Wenn du willst, dass ich dir ein Kommentar auf ihns ta gram da lasse, schreib deinen Namen auf den Laptop")
+#animatedSpeech.say("Das freut mich zu hoeren. Wenn du willst, dass ich dir ein Kommentar auf ihns ta gram da lasse, schreib deinen Namen auf den Laptop")
 
 
-moveFunction2(session)
+#moveFunction2(session)
 time.sleep(2)
 correctInput = False
 while(not correctInput):
@@ -237,6 +237,20 @@ except Exception, e:
   quit()
 
 animatedSpeech.say("Dein Ins ta gram name ist: " + input_name + ".")
+
+temp = ""
+
+for letter in input_fullname:
+  try:
+    #This print is Important! It is used to throw a exception
+    # I know its not perfect but it works...
+     print(letter)
+     temp += letter
+  except Exception as e:
+    pass
+
+input_fullname = temp
+print(input_fullname)
 
 try:
   animatedSpeech.say("Ich glaube dein tatsaechlicher Name ist: " +unicode(input_fullname) + ".")
