@@ -1,5 +1,7 @@
 # coding=utf-8
 # This Python file uses the following encoding: utf-8
+# LANG=en_US.UTF-8
+
 
 from instagram_private_api import Client, ClientCompatPatch
 import qi
@@ -241,12 +243,13 @@ animatedSpeech.say("Dein Ins ta gram name ist: " + input_name + ".")
 
 
 input_fullname = unicodedata.normalize('NFC', input_fullname)
-
+print(input_fullname)
 
 try:
   animatedSpeech.say("Ich glaube dein tatsaechlicher Name ist: " +unicode(input_fullname) + ".")
 except Exception as e:
-  #Probably couldnt display scharfes S: Still need to be fixed
+  #Probably couldnt display weird characters
+  print(e)
   pass
 time.sleep(1)
 tts.setParameter("speed", 90)
@@ -331,20 +334,26 @@ except Exception, e:
   inputGUI.readyToDestroy = True
   quit()
 
-#TODO: Liken als extra thread programmieren.
-#Like all posts
-allMediaIDs = []
-user_feed = api.user_feed(input_id)
-counter = 0
-while(True):
-    try:
-        allMediaIDs.append(user_feed['items'][counter]['id'])
-        counter += 1
-    except:
-        break
 
-for mediaID in allMediaIDs:
-    api.post_like(mediaID)
+#Like all posts
+def likeAllPosts():
+  allMediaIDs = []
+  user_feed = api.user_feed(input_id)
+  counter = 0
+  while(True):
+     try:
+          allMediaIDs.append(user_feed['items'][counter]['id'])
+          counter += 1
+     except:
+          break
+
+  for mediaID in allMediaIDs:
+      print("LIKED")
+      api.post_like(mediaID)
+
+th = Thread(target = likeAllPosts)
+th.start()
+
   
 #Post Comment
 commentGen = comments.Comments()

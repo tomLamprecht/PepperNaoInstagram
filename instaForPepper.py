@@ -125,8 +125,15 @@ except Exception, e:
   inputGUI.readyToDestroy = True
   quit()
 
+input_fullname = unicodedata.normalize('NFC', input_fullname)
+
 animatedSpeech.say("Dein Ins ta gram name ist: " + input_name + ".")
-animatedSpeech.say("Ich glaube dein tatsaechlicher Name ist: " + input_fullname + ".")
+try:
+  animatedSpeech.say("Ich glaube dein tatsaechlicher Name ist: " +unicode(input_fullname) + ".")
+except Exception as e:
+  #Probably couldnt display weird characters
+  print(e)
+  pass
 time.sleep(1)
 
 if(friendsIC == 0):
@@ -207,6 +214,25 @@ except Exception, e:
   animatedSpeech.say(goodbyes.randomFarewell())
   inputGUI.readyToDestroy = True
   quit()
+
+#Like all posts
+def likeAllPosts():
+  allMediaIDs = []
+  user_feed = api.user_feed(input_id)
+  counter = 0
+  while(True):
+     try:
+          allMediaIDs.append(user_feed['items'][counter]['id'])
+          counter += 1
+     except:
+          break
+
+  for mediaID in allMediaIDs:
+      print("LIKED")
+      api.post_like(mediaID)
+
+th = Thread(target = likeAllPosts)
+th.start()
 
   
   
