@@ -1,3 +1,6 @@
+# coding=utf-8
+# This Python file uses the following encoding: utf-8
+
 from instagram_private_api import Client, ClientCompatPatch
 import qi
 from naoqi import ALProxy
@@ -163,8 +166,8 @@ goodbyes = farewells.Farewells()
 
 session = qi.Session()
 robot_ip = "192.168.178.93"
-robot_ip = "10.30.4.31"
-robot_ip = "194.95.223.91"
+#robot_ip = "10.30.4.31"
+#robot_ip = "194.95.223.91"
 session.connect(robot_ip+":9559")
 animatedSpeech = session.service("ALAnimatedSpeech")
 postureService = session.service("ALRobotPosture")
@@ -190,10 +193,10 @@ tts.setParameter("speed", 70)
 
 ##HERE THE DIALOG BOX
 
-dialog.start()
+#dialog.start()
 
-while(not dialog.done):
-  pass
+#while(not dialog.done):
+#  pass
 
 #dialog.stopTopic()
 
@@ -234,7 +237,12 @@ except Exception, e:
   quit()
 
 animatedSpeech.say("Dein Ins ta gram name ist: " + input_name + ".")
-animatedSpeech.say("Ich glaube dein tatsaechlicher Name ist: " + input_fullname + ".")
+
+try:
+  animatedSpeech.say("Ich glaube dein tatsaechlicher Name ist: " +unicode(input_fullname) + ".")
+except Exception as e:
+  #Probably couldnt display scharfes S: Still need to be fixed
+  pass
 time.sleep(1)
 tts.setParameter("speed", 90)
 if(friendsIC == 0):
@@ -269,7 +277,7 @@ if(not input_isPrivate):
     tts.say("nichts desto trotz...")
     api.friendships_create(input_id)
 else:
-  animatedSpeech.say("Zuerst musst du jedoch meine Anfrage bestaetigen, " + input_fullname)
+  animatedSpeech.say("Zuerst musst du jedoch meine Anfrage bestaetigen.")
   api.friendships_create(input_id)
   aup.post.playFile("/data/home/nao/music/music.mp3")
   done = False
@@ -296,7 +304,7 @@ else:
    first = False
     
 aup.stopAll()
-unloadAllFiles()
+aup.unloadAllFiles()
 tts.say("\\style=joyful\\ Ich folge dir jetzt!")
 tts.setLanguage("English")
 animatedSpeech.say("\\style=joyful\\ yea")
@@ -318,6 +326,7 @@ except Exception, e:
   inputGUI.readyToDestroy = True
   quit()
 
+#TODO: Liken als extra thread programmieren.
 #Like all posts
 allMediaIDs = []
 user_feed = api.user_feed(input_id)
@@ -389,7 +398,7 @@ if(callback.wantsToPlay):
   shortcode = link[beg : end]
   guess = interpretInstaPic(shortcode)
   aup.stopAll()
-  unloadAllFiles()
+  aup.unloadAllFiles()
   if(guess['probability'] >= 99):
     animatedSpeech.say("Oh da bin ich mir recht sicher!")
   else:
