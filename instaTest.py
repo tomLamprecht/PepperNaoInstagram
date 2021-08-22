@@ -12,6 +12,7 @@ from threading import Thread
 import dialog as dia
 import os
 import comments
+import unicodedata
 
 #-----------------------------------------MOVEMENT FUNCTIONS------------------------------------------------------------
 
@@ -238,19 +239,9 @@ except Exception, e:
 
 animatedSpeech.say("Dein Ins ta gram name ist: " + input_name + ".")
 
-temp = ""
 
-for letter in input_fullname:
-  try:
-    #This print is Important! It is used to throw a exception
-    # I know its not perfect but it works...
-     print(letter)
-     temp += letter
-  except Exception as e:
-    pass
+input_fullname = unicodedata.normalize('NFC', input_fullname)
 
-input_fullname = temp
-print(input_fullname)
 
 try:
   animatedSpeech.say("Ich glaube dein tatsaechlicher Name ist: " +unicode(input_fullname) + ".")
