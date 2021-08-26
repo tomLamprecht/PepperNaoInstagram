@@ -2,7 +2,7 @@
 
 **Version 1.0.0**
 ---
-
+![Python 2.7, 3.7](https://img.shields.io/badge/Python-2.7%2C%203.5-3776ab.svg?maxAge=2592000)
 This is currently a unstable build of this Instagram bot for Pepper and Nao
 
 ---
@@ -12,7 +12,7 @@ This is currently a unstable build of this Instagram bot for Pepper and Nao
 Following Python versions with matching Libraries have to be installed for the programm in order to work properly.
 
 ### Python 2.7
-<u>(PIP dropped the support for Python 2 in January 2021, therfore all Libraries for Python 2.7 have to be installed manuelly)</u>
+(<u>PIP dropped the support for Python 2 in January 2021, therfore all Libraries for Python 2.7 have to be installed manuelly</u>)
 
 with:\
     &ensp;[naoqi Python SDK](https://community-static.aldebaran.com/resources/2.1.4.13/sdk-python/pynaoqi-2.1.4.13.win32.exe)\
