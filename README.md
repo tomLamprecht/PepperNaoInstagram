@@ -13,8 +13,8 @@ Following Python versions with matching Libraries have to be installed for the p
 
 ### Python 2.7
 with:\
-    &ensp;naoqi Python SDK (https://community-static.aldebaran.com/resources/2.1.4.13/sdk-python/pynaoqi-2.1.4.13.win32.exe)\
-    &ensp;Private Instagram API for Python (https://github.com/ping/instagram_private_api#install The Install Guide is outdated! PIP Install not working anymore)
+    &ensp;[naoqi Python SDK](https://community-static.aldebaran.com/resources/2.1.4.13/sdk-python/pynaoqi-2.1.4.13.win32.exe)\
+    &ensp;[Private Instagram API for Python](https://github.com/ping/instagram_private_api#install) (The Install Guide is outdated! PIP Install not working anymore)
 
 <u>(PIP dropped the support for Python 2 in January 2021, therfore all Libraries for Python 2.7 have to be installed manuelly)</u>
 
@@ -35,11 +35,11 @@ these are all the versions that worked for me. Others may work aswell but i cant
 
 #### Type the following statements into your Console to install all needed Python 3 Libraries:
 ```
-pip install tensorflow==2.4.0\
+pip install tensorflow==2.4.0
 ```
  *<b>or</b> Tensorflow GPU if you have NVIDIA GPU with CUDA and cuDNN installed:*
 ```
-pip install tensorflow-gpu==2.4.0\
+pip install tensorflow-gpu==2.4.0
 ```
 and all other libs:
 ```
