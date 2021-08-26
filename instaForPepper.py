@@ -15,6 +15,7 @@ import dialog as dia
 import tabletJS as tjs
 import os
 import comments
+import unicodedata
 
 #-----------------------------------------MOVEMENT FUNCTIONS------------------------------------------------------------
 
@@ -34,6 +35,7 @@ def interpretInstaPic(shortcode):
     print(results[1]['prediction_translated'] + " " + str(results[1]['probability']) + '%')
     print(results[0]['prediction_translated'] + " " + str(results[0]['probability']) + '%')
 
+    return results[0]
 
 user_name = 'tomtestaccount1234'
 password = '09333575'
@@ -62,7 +64,9 @@ session.connect(robotIP+ ":9559")
 animatedSpeech = session.service("ALAnimatedSpeech")
 postureService = session.service("ALRobotPosture")
 tts = session.service("ALTextToSpeech")
+asr = ALProxy("ALSpeechRecognition", robotIP, 9559)
 dialog = dia.Dialog(session, robotIP)
+memory = session.service("ALMemory")
 tabletJS = tjs.TabletJS(session)
 aup = ALProxy("ALAudioPlayer", robotIP , 9559)
 
@@ -256,6 +260,58 @@ else:
     number = int(input_follower_count/100) * 100
     animatedSpeech.say("WAS?, du hast ueber " + str(number) + " Abonennten? Das ist sehr beeindruckend!\\pau=800\\ Nichts desto trotz: ")
     
+animatedSpeech.say("Moechtest du vielleicht noch ein kleines Spiel spielen?")
+
+vocabulary = ["ja", "nein"]
+asr.pause(True)
+try:
+  asr.setVocabulary(vocabulary, False)
+except:
+  pass
+asr.pause(False)
+
+class Callback:
+
+  def __init__(self):
+    self.answered = False
+
+  def on_answered(self,value):
+    self.answered = True
+    if(str(value).__contains__("ja")):
+      self.wantsToPlay = True
+    else:
+      self.wantsToPlay = False
+
+subscriber = memory.subscriber("WordRecognized")
+callback = Callback()
+subscriber.signal.connect(callback.on_answered)
+asr.subscribe("ImageReco_Fragen")
+while(not callback.answered):
+  pass
+asr.unsubscribe("ImageReco_Fragen")
+
+
+if(callback.wantsToPlay):
+  animatedSpeech.say("Okay, schau auf dein neustes Ins ta gram Bild. \\pau=500\\ Ich versuche herauszufinden was auf den Bild zu sehen ist.")
+  animatedSpeech.say("Dafuer werde ich aber ein bisschen Zeit brauchen also warte bitte kurz.")
+  aup.post.playFile("/data/home/nao/music/music.mp3")
+  link = str(api.media_permalink(latestMediaId)['permalink'])
+  beg_search = 'https://www.instagram.com/p/'
+  beg = link.index(beg_search)+len(beg_search)
+  end = link.index('/?utm', beg)
+  shortcode = link[beg : end]
+  guess = interpretInstaPic(shortcode)
+  aup.stopAll()
+  aup.unloadAllFiles()
+  if(guess['probability'] >= 99):
+    animatedSpeech.say("Oh da bin ich mir recht sicher!")
+  else:
+    animatedSpeech.say("Das war echt nicht leicht. Aber")
+  animatedSpeech.say("Ich glaube auf dem Bild befindet sich: \\pau=200\\" + guess['prediction_translated'])
+  time.sleep(2)
+  animatedSpeech.say("Nichts desto trotz: ")
+else:
+  animatedSpeech.say("Okay Schade. ")
 
 tts.setLanguage("English")
 animatedSpeech.say(goodbyes.randomFarewell())
