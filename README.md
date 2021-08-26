@@ -63,7 +63,7 @@ replace the `client.py` file with [this file](client.py)
 
 This prevents the Programm to crash when a non-ascii-letter like 'ä', 'ö' or 'ü' is occurring.
 <br>
-
+<br>
 ### Python 3.7
 with:\
     &ensp;deep-translator==1.5.0\
