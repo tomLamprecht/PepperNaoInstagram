@@ -71,7 +71,7 @@ Following Python versions with matching Libraries have to be installed for the p
     This prevents the Programm to crash when a non-ascii-letter like 'ä', 'ö' or 'ü' is occurring.
 <br>
 
-- ## Python 3.7.6
+- ## Python 3.7.6 [Download](https://www.python.org/downloads/release/python-376/)
 
     **Libraries:**
     * &ensp;deep-translator==1.5.0
