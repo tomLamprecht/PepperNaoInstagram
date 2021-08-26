@@ -42,11 +42,17 @@ aycauserid= "2071273069"
 useridtestacc = "48804734072"
 aycausername = "aycaa_ozturk"
 
-#api = Client(user_name, password)
 
-with open('data.txt') as json_file:
-    cached_settings = json.load(json_file)
-api = Client(user_name, password, settings = cached_settings)
+try:
+  with open('data.txt') as json_file:
+      cached_settings = json.load(json_file)
+  api = Client(user_name, password, settings = cached_settings)
+except Exception as e:
+  print("Cached Settings File was outdated, create new one...")
+  api = Client(user_name, password)
+  with open('data.txt', 'w') as outfile:
+      json.dump(api.settings, outfile)
+  print("New File created")
 
 goodbyes = farewells.Farewells()
 
