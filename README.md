@@ -1,5 +1,3 @@
-syntax.highlighter.<MIME type>.executables=python
-
 # READ ME for the NAO & PEPPER Instagram Bot
 
 **Version 1.0.0**
