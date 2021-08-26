@@ -25,45 +25,45 @@ This is a basic programm for the roboters Pepper and Nao. It can like, comment a
 
 # Installation Guide
 
-
+<br>
 Following Python versions with matching Libraries have to be installed for the programm in order to work properly.
+<br>
 
+- ## Python 2.7
+    * (<u>PIP dropped the support for Python 2 in January 2021, therfore all Libraries for Python 2.7 have to be installed manuelly</u>)
 
-## Python 2.7
-(<u>PIP dropped the support for Python 2 in January 2021, therfore all Libraries for Python 2.7 have to be installed manuelly</u>)
-
-with:\
+    with:\
     &ensp;[naoqi Python SDK](https://community-static.aldebaran.com/resources/2.1.4.13/sdk-python/pynaoqi-2.1.4.13.win32.exe)\
     &ensp;[Private Instagram API for Python](https://github.com/ping/instagram_private_api#install) (<u>The Installation Guide is outdated!</u>)
 
 
-**After you have installed both Libraries you have to fix a bug in the [Private Instagram API for Python](https://github.com/ping/instagram_private_api).**
+    * **After you have installed both Libraries you have to fix a bug in the [Private Instagram API for Python](https://github.com/ping/instagram_private_api).**
 
-Go to your Python27 folder. There you direct to:
+        * Go to your Python27 folder. There you direct to:
 
-` Lib>site-packages>instagram_private_api`
+        ` Lib>site-packages>instagram_private_api`
 
-and open the [client.py](https://github.com/ping/instagram_private_api/blob/master/instagram_private_api/client.py) file.
+        and open the [client.py](https://github.com/ping/instagram_private_api/blob/master/instagram_private_api/client.py) file.
 
-Go to line 540 (in older versions line 521) and surround the line with a try catch block.\
-like this:
-```
-try:
-    self.logger.debug('RESPONSE: {0:d} {1!s}'.format(response.code, response_content))
-except Exception as e:
-        pass
-```
+        Go to line 540 (in older versions line 521) and surround the line with a try catch block.\
+        like this:
+        ```
+        try:
+            self.logger.debug('RESPONSE: {0:d} {1!s}'.format(response.code, response_content))
+        except Exception as e:
+                pass
+        ```
 
-**Alternative**
+        * **Alternative**
 
-Go to your Python27 folder and direct to:
+        Go to your Python27 folder and direct to:
 
-` Lib>site-packages>instagram_private_api`
+        ` Lib>site-packages>instagram_private_api`
 
-replace the `client.py` file with [this file](client.py) 
+        replace the `client.py` file with [this file](client.py) 
 
 
-This prevents the Programm to crash when a non-ascii-letter like 'ä', 'ö' or 'ü' is occurring.
+    This prevents the Programm to crash when a non-ascii-letter like 'ä', 'ö' or 'ü' is occurring.
 <br>
 <br>
 
