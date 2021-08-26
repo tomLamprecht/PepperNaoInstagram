@@ -112,6 +112,7 @@ Following Python versions with matching Libraries have to be installed for the p
     pip install keras==2.4.3 numpy==1.19.3 pillow==7.0.0 scipy==1.4.1 h5py==2.10.0 matplotlib==3.3.2 opencv-python keras-resnet==0.2.0 deep-translator==1.5.0
     ```
 
+<br>
 Furthermore the robots needs to have some specific soundfiles in their local storage device.
 In order to do this, u need a Programm like [Bitvise](https://www.bitvise.com/ssh-client-download) or [Choregraphe](https://www.softbankrobotics.com/emea/en/support/nao-6/downloads-softwares)\
 Connect to the robot and direkt to 
