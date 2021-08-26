@@ -41,6 +41,7 @@ Following Python versions with matching Libraries have to be installed for the p
 
 
     **After you have installed both Libraries you have to fix a bug in the [Private Instagram API for Python](https://github.com/ping/instagram_private_api).**
+    <br>
 
     * Go to your Python27 folder. There you direct to:
 
@@ -64,9 +65,9 @@ Following Python versions with matching Libraries have to be installed for the p
 
         ` Lib>site-packages>instagram_private_api`
 
-        replace the `client.py` file with [this file](client.py) 
+        replace the `client.py` file with [this file](client.py). 
 
-
+    <br>
     This prevents the Programm to crash when a non-ascii-letter like 'ä', 'ö' or 'ü' is occurring.
 <br>
 <br>
