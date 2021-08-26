@@ -113,11 +113,16 @@ Following Python versions with matching Libraries have to be installed for the p
     ```
 
 <br>
-Furthermore the robots needs to have some specific soundfiles in their local storage device.
-In order to do this, u need a Programm like [Bitvise](https://www.bitvise.com/ssh-client-download) or [Choregraphe](https://www.softbankrobotics.com/emea/en/support/nao-6/downloads-softwares)\
-Connect to the robot and direkt to 
+Furthermore the robots need some specific soundfiles in their local storage device.
+In order to do this, u need a Programm like 
 
-`/data/home/nao`
+[Bitvise](https://www.bitvise.com/ssh-client-download) 
+or 
+[Choregraphe](https://www.softbankrobotics.com/emea/en/support/nao-6/downloads-softwares).
+
+Connect to the robot and direct to 
+
+`data>home>nao`
 
 there you have to create a folder called `music`.
 Upload [this file](soundfiles/music.mp3) and [this one](soundfiles/nyan_cat.mp3) to the robot.
