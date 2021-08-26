@@ -40,7 +40,7 @@ Following Python versions with matching Libraries have to be installed for the p
     * &ensp;[Private Instagram API for Python](https://github.com/ping/instagram_private_api#install) (<u>The Installation Guide is outdated!</u>)
 
 
-    **After you have installed both Libraries you have to fix a bug in the [Private Instagram API for Python](https://github.com/ping/instagram_private_api).**
+    **After you have installed both Libraries you have to fix a bug in the [Private Instagram API for Python](https://github.com/ping/instagram_private_api):**
     <br>
     <br>
     * Go to your Python27 folder. There you direct to:
@@ -69,7 +69,6 @@ Following Python versions with matching Libraries have to be installed for the p
 
     <br>
     This prevents the Programm to crash when a non-ascii-letter like 'ä', 'ö' or 'ü' is occurring.
-<br>
 <br>
 
 - ## Python 3.7
