@@ -32,7 +32,7 @@ This is a basic programm for the roboters Pepper and Nao. It can like, comment a
 Following Python versions with matching Libraries have to be installed for the programm in order to work properly.
 <br>
 
-- ## Python 2.7
+- ## Python 2.7 [Download](https://www.python.org/download/releases/2.7/)
     **Libraries:**\
     <u>PIP dropped the support for Python 2 in January 2021, therfore all Libraries for Python 2.7 have to be installed manuelly</u>
 
@@ -71,7 +71,7 @@ Following Python versions with matching Libraries have to be installed for the p
     This prevents the Programm to crash when a non-ascii-letter like 'ä', 'ö' or 'ü' is occurring.
 <br>
 
-- ## Python 3.7
+- ## Python 3.7.6
 
     **Libraries:**
     * &ensp;deep-translator==1.5.0
