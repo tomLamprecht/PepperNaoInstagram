@@ -15,7 +15,7 @@ Only tested on Pepper and Nao V6
 
 # Overview
 
-This is a basic programm for the roboters Pepper and Nao. It can like, comment and interpret Instagram posts. Pepper is using his tablet and Nao a laptop to writedown a username. This is meant to be a show performance programm, there are <u><b>no</b></u> methods or classes that are meant to be used outside of this Programm.
+This is a basic programm for the robots Pepper and Nao. It can like, comment and interpret Instagram posts. Pepper is using his tablet and Nao a laptop to writedown a username. This is meant to be a show performance programm, there are <u><b>no</b></u> methods or classes that are meant to be used outside of this programm.
 
 [Usage](#usage)
 
@@ -40,7 +40,7 @@ Here comes the Usage Explanation
 # Installation Guide
 
 <br>
-Following Python versions with matching Libraries have to be installed for the programm in order to work properly.
+Following Python versions with matching Libraries have to be installed.
 <br>
 
 - ## Python 2.7 ([Download](https://www.python.org/download/releases/2.7/))
@@ -94,7 +94,7 @@ Following Python versions with matching Libraries have to be installed for the p
     * &ensp;matplotlib==3.3.2
     * &ensp;h5py==2.10.0
     * &ensp;keras==2.4.3
-    * &ensp;imageai=2.1.6
+    * &ensp;imageai==2.1.6
 
     these are all the versions that worked for me. Others may work aswell but i cant promise it.
     <br>
@@ -112,6 +112,10 @@ Following Python versions with matching Libraries have to be installed for the p
     Then add all other libraries:
     ```
     pip install keras==2.4.3 numpy==1.19.3 pillow==7.0.0 scipy==1.4.1 h5py==2.10.0 matplotlib==3.3.2 opencv-python keras-resnet==0.2.0 deep-translator==1.5.0
+    ```
+    at the end install the Image AI:
+    ```
+    pip install imageai==2.1.6
     ```
 
 <br>
