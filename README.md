@@ -120,7 +120,7 @@ Following Python versions with matching Libraries have to be installed.
 
 <br>
 Furthermore the robots need some specific soundfiles in their local storage device.
-In order to do this, u need a Programm like 
+In order to do this, u need a programm like 
 
 [Bitvise](https://www.bitvise.com/ssh-client-download)\
 or
