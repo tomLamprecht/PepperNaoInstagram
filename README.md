@@ -1,6 +1,6 @@
 # READ ME for the NAO & PEPPER Instagram Bot
 
-<h1 style="color:red;font-size:40px;">Heading</h1> 
+<h1 style="color:red;font-size:90px;">Heading</h1> 
 
 **Version ALPHA**
 ---
