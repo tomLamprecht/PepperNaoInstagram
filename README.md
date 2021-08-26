@@ -68,7 +68,7 @@ Following Python versions with matching Libraries have to be installed for the p
 <br>
 
 - ## Python 3.7
-    <br>
+
     * &ensp;deep-translator==1.5.0\
     * &ensp;tensorflow==2.4.0\
     * &ensp;numpy==1.19.3\
