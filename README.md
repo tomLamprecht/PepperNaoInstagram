@@ -124,9 +124,9 @@ Connect to the robot and direct to
 
 `data>home>nao`
 
-(if you are using choregraph you are automatically in path)
+(if you are using choregraph you are automatically in path)\
 there you have to create a folder called `music`.
-Upload [this file](soundfiles/music.mp3) and [this one](soundfiles/nyan_cat.mp3) to the robot.
+Upload [this file](soundfiles/music.mp3) and [this one](soundfiles/nyan_cat.mp3) into this folder.
 
 ---
 <a name="license"></a>
