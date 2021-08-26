@@ -10,6 +10,9 @@ This is currently a unstable build of this Instagram bot for Pepper and Nao\
 
 ## Overview
 
+This is a basic Programm for the Roboters Pepper and Nao. It can like, comment and interpret Instagram Posts. Pepper is using his Tablet and Nao a Laptop to writedown a username. This is meant to be a show performance programm, there are <b>no</b> methods or classes that are meant to be used outside of this Programm.
+
+
 [Installation Guide](#install-guide)
 
 [License & Copyright](#license)
