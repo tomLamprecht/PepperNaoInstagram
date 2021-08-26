@@ -7,7 +7,7 @@ This is currently a unstable build of this Instagram bot for Pepper and Nao
 
 ---
 
-**Install guide**
+## Installation guide
 
 Following Python versions with matching Libraries have to be installed for the programm in order to work properly.
 
