@@ -5,12 +5,11 @@
 ![Python 2.7, 3.7](https://img.shields.io/badge/Python-2.7%2C%203.5-3776ab.svg?maxAge=2592000)
 
 This is currently a unstable build of this Instagram bot for Pepper and Nao\
-[link](#install-guide)
 ---
 
 ## Overview
 
-This is a basic Programm for the Roboters Pepper and Nao. It can like, comment and interpret Instagram Posts. Pepper is using his Tablet and Nao a Laptop to writedown a username. This is meant to be a show performance programm, there are <b>no</b> methods or classes that are meant to be used outside of this Programm.
+This is a basic programm for the roboters Pepper and Nao. It can like, comment and interpret Instagram posts. Pepper is using his tablet and Nao a laptop to writedown a username. This is meant to be a show performance programm, there are <u><b>no</b></u> methods or classes that are meant to be used outside of this Programm.
 
 
 [Installation Guide](#install-guide)
