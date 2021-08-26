@@ -1,3 +1,5 @@
+syntax.highlighter.<MIME type>.executables=python
+
 # READ ME for the NAO & PEPPER Instagram Bot
 
 **Version 1.0.0**
@@ -36,7 +38,9 @@ with:\
 
 After you have installed both Libraries you have to fix a bug in the [Private Instagram API for Python](https://github.com/ping/instagram_private_api).\
 Go to your Python27 folder. There you direct to
->Lib>site-packages>instagram_private_api
+
+> Lib>site-packages>instagram_private_api
+
 and open the [client.py](https://github.com/ping/instagram_private_api/blob/master/instagram_private_api/client.py) file.
 
 Go to line 540 (in older versions line 521) and surround the line with a try catch block.\
