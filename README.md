@@ -11,25 +11,25 @@ This is currently a unstable build of this Instagram bot for Pepper and Nao
 
 Following Python versions with matching Libraries have to be installed for the programm in order to work properly.
 
-<p>Python 2.7
+<p><b>Python 2.7</b>
 with:
-    naoqi Python SDK (https://community-static.aldebaran.com/resources/2.1.4.13/sdk-python/pynaoqi-2.1.4.13.win32.exe)\
-    Private Instagram API for Python (https://github.com/ping/instagram_private_api#install The Install Guide is outdated! PIP Install not working anymore)</p>
+    &ensp;naoqi Python SDK (https://community-static.aldebaran.com/resources/2.1.4.13/sdk-python/pynaoqi-2.1.4.13.win32.exe)\
+    &ensp;Private Instagram API for Python (https://github.com/ping/instagram_private_api#install The Install Guide is outdated! PIP Install not working anymore)</p>
 
 (PIP dropped the support for Python 2 in January 2021, therfore all Libraries for Python 2.7 have to be installed manuelly)
 
-Python 3.7\
+<b>Python 3.7</b>\
 with:\
-    deep-translator==1.5.0\
-    tensorflow==2.4.0\
-    numpy==1.19.3\
-    scipy==1.4.1\
-    opencv-python==4.5.3.56\
-    pillow==7.0.0\
-    matplotlib==3.3.2\
-    h5py==2.10.0\
-    keras==2.4.3\
-    imageai=2.1.6\
+    &ensp;deep-translator==1.5.0\
+    &ensp;tensorflow==2.4.0\
+    &ensp;numpy==1.19.3\
+    &ensp;scipy==1.4.1\
+    &ensp;opencv-python==4.5.3.56\
+    &ensp;pillow==7.0.0\
+    &ensp;matplotlib==3.3.2\
+    &ensp;h5py==2.10.0\
+    &ensp;keras==2.4.3\
+    &ensp;imageai=2.1.6\
 
 these are all the versions that worked for me. Others may work aswell but i cant promise it.
 
