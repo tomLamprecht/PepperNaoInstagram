@@ -243,7 +243,7 @@ animatedSpeech.say("Dein Ins ta gram name ist: " + input_name + ".")
 
 
 input_fullname = unicodedata.normalize('NFC', input_fullname)
-print(input_fullname)
+
 
 try:
   animatedSpeech.say("Ich glaube dein tatsaechlicher Name ist: " +unicode(input_fullname) + ".")
