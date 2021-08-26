@@ -1,6 +1,6 @@
 # READ ME for the NAO & PEPPER Instagram Bot
 
-**Version 1.0.0**
+**Version ALPHA**
 ---
 ![Python 2.7, 3.7](https://img.shields.io/badge/Python-2.7%2C%203.5-3776ab.svg?maxAge=2592000)
 
@@ -15,6 +15,7 @@ This is a basic programm for the roboters Pepper and Nao. It can like, comment a
 [Installation Guide](#install-guide)
 
 [License & Copyright](#license)
+<br>
 
 ---
 
@@ -78,16 +79,19 @@ with:\
     &ensp;imageai=2.1.6
 
 these are all the versions that worked for me. Others may work aswell but i cant promise it.
+<br>
 
 #### Type the following statements into your Console to install all needed Python 3 Libraries:
+
+Install Tensorflow
 ```
 pip install tensorflow==2.4.0
 ```
- *<b>or</b> Tensorflow GPU if you have NVIDIA GPU with CUDA and cuDNN installed:*
+ *<b>Or</b> Tensorflow GPU if you have NVIDIA GPU with CUDA and cuDNN installed:*
 ```
 pip install tensorflow-gpu==2.4.0
 ```
-and all other libs:
+Then add all other libraries:
 ```
 pip install keras==2.4.3 numpy==1.19.3 pillow==7.0.0 scipy==1.4.1 h5py==2.10.0 matplotlib==3.3.2 opencv-python keras-resnet==0.2.0 deep-translator==1.5.0
 ```
