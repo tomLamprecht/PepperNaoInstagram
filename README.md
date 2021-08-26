@@ -42,9 +42,9 @@ Following Python versions with matching Libraries have to be installed for the p
 
     **After you have installed both Libraries you have to fix a bug in the [Private Instagram API for Python](https://github.com/ping/instagram_private_api).**
 
-        * Go to your Python27 folder. There you direct to:
+    * Go to your Python27 folder. There you direct to:
 
-            ` Lib>site-packages>instagram_private_api`
+        ` Lib>site-packages>instagram_private_api`
 
         and open the [client.py](https://github.com/ping/instagram_private_api/blob/master/instagram_private_api/client.py) file.
 
@@ -58,7 +58,7 @@ Following Python versions with matching Libraries have to be installed for the p
         ```
         <br>
 
-        * **Alternative**
+    * **Alternative**
 
         Go to your Python27 folder and direct to:
 
