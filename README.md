@@ -30,6 +30,7 @@ Following Python versions with matching Libraries have to be installed for the p
 <br>
 
 - ## Python 2.7
+    <b>Libraries:</b>
     (<u>PIP dropped the support for Python 2 in January 2021, therfore all Libraries for Python 2.7 have to be installed manuelly</u>)
 
     * &ensp;[naoqi Python SDK](https://community-static.aldebaran.com/resources/2.1.4.13/sdk-python/pynaoqi-2.1.4.13.win32.exe)\
@@ -69,6 +70,7 @@ Following Python versions with matching Libraries have to be installed for the p
 
 - ## Python 3.7
 
+    <b>Libraries:</b>
     * &ensp;deep-translator==1.5.0
     * &ensp;tensorflow==2.4.0
     * &ensp;numpy==1.19.3
