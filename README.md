@@ -37,7 +37,7 @@ these are all the versions that worked for me. Others may work aswell but i cant
 ```
 pip install tensorflow==2.4.0\
 ```
-<b><u>or</u> Tensorflow GPU if you have NVIDIA GPU with CUDA and cuDNN installed:</b>\
+* <u>or</u> Tensorflow GPU if you have NVIDIA GPU with CUDA and cuDNN installed: *
 ```
 pip install tensorflow-gpu==2.4.0\
 ```
