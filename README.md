@@ -58,7 +58,7 @@ Go to your Python27 folder and direct to:
 
 ` Lib>site-packages>instagram_private_api`
 
-replace the `client.py` file with [this file](docs/client.py) 
+replace the `client.py` file with [this file](client.py) 
 
 
 
