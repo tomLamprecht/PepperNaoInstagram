@@ -3,12 +3,15 @@
 ---
 
 **Version ALPHA**
+
 ---
+
 ![Python 2.7, 3.7](https://img.shields.io/badge/Python-2.7%2C%203.5-3776ab.svg?maxAge=2592000)
 
 This is currently a unstable build
 
 Only tested on Pepper and Nao V6
+
 ---
 
 # Overview
