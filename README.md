@@ -116,8 +116,8 @@ Following Python versions with matching Libraries have to be installed for the p
 Furthermore the robots need some specific soundfiles in their local storage device.
 In order to do this, u need a Programm like 
 
-[Bitvise](https://www.bitvise.com/ssh-client-download) 
-or 
+[Bitvise](https://www.bitvise.com/ssh-client-download)\
+or\
 [Choregraphe](https://www.softbankrobotics.com/emea/en/support/nao-6/downloads-softwares).
 
 Connect to the robot and direct to 
