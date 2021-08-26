@@ -11,8 +11,8 @@ This is currently a unstable build of this Instagram bot for Pepper and Nao
 
 Following Python versions with matching Libraries have to be installed for the programm in order to work properly.
 
-<b>Python 2.7</b>
-with:
+<b>Python 2.7</b>\
+with:\
     &ensp;naoqi Python SDK (https://community-static.aldebaran.com/resources/2.1.4.13/sdk-python/pynaoqi-2.1.4.13.win32.exe)\
     &ensp;Private Instagram API for Python (https://github.com/ping/instagram_private_api#install The Install Guide is outdated! PIP Install not working anymore)
 
