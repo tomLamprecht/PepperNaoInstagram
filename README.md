@@ -5,14 +5,14 @@
 ![Python 2.7, 3.7](https://img.shields.io/badge/Python-2.7%2C%203.5-3776ab.svg?maxAge=2592000)
 
 This is currently a unstable build of this Instagram bot for Pepper and Nao\
-[Go to Real Cool Heading section](#real-cool-heading)
+[Go to Real Cool Heading section](#-real-cool-heading)
 ---
 
 ## Installation guide
 
 Following Python versions with matching Libraries have to be installed for the programm in order to work properly.
 
-#Real Cool Heading
+# Real Cool Heading
 some text 
 
 ### Python 2.7
