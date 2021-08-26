@@ -34,13 +34,17 @@ with:\
 these are all the versions that worked for me. Others may work aswell but i cant promise it.
 
 #### Type the following statements into your Console to install all needed Python 3 Libraries:
-
+```
 pip install tensorflow==2.4.0\
-**<u>or</u> Tensorflow GPU if you have NVIDIA GPU with CUDA and cuDNN installed:**\
-    &ensp;pip install tensorflow-gpu==2.4.0\
-and all other libs:\
+```
+<b><u>or</u> Tensorflow GPU if you have NVIDIA GPU with CUDA and cuDNN installed:</b>\
+```
+pip install tensorflow-gpu==2.4.0\
+```
+and all other libs:
+```
 pip install keras==2.4.3 numpy==1.19.3 pillow==7.0.0 scipy==1.4.1 h5py==2.10.0 matplotlib==3.3.2 opencv-python keras-resnet==0.2.0 deep-translator==1.5.0
-
+```
 ---
 
 ## License & copyright
