@@ -92,6 +92,7 @@ class Dialog:
         subscriber = self.memory.subscriber("Dialog/Answered")
         subscriber.signal.connect(self.on_answered)
 
+        self.session.service("ALAnimatedSpeech").say("\\rspd=95\\Programm gestartet.\\pau=500\\ Bitte antworten Sie mit ein bis zwei wörtern, da meine Spracherkennung noch nicht sehr fortgeschritten ist.")
 
 
         #set Lanuage
@@ -103,7 +104,7 @@ class Dialog:
                     'proposal: Hast du Ins ta gram?\n'
                         'u1: ([ja yes jo jap]) alles klar ^call(ALMemory.raiseEvent("HasInstaAnswered", True))\n'
                         'u1: ([nein nö ne nope]) okay schade. Bis dann!^call(ALMemory.raiseEvent("HasInstaAnswered", False))\n'
-                    'u: ([Pepper Hallo Hey Hi "Guten Morgen" Abend Tag "Grueß Gott" Servus Sers]) Hallo Mensch. Ich bin der Roboter '+self.session.service("ALSystem").robotName()+'. Wie geht es dir?\n'
+                    'u: ([Pepper Hallo Hey Hi "Guten Morgen" Abend Tag "Grueß Gott" Servus Sers OK okay]) Hallo Mensch. Ich bin der Roboter '+self.session.service("ALSystem").robotName()+'. Wie geht es dir?\n'
                     'u1: ([gut "sehr gut" Gut jut super klasse grandios fantastisch]) das freut mich. Was ist deine Lieblingsfarbe?\n'
                             'u2: (_~farben) ["$1==gelb gelb ist eine schöne Farbe. Meine Lieblingsfarbe ist auch Gelb. \\pau=1000\\ ^nextProposal" "$1 ist eine schoene Farbe. Meine Lieblingsfarbe ist Gelb. \\pau=1000\\ ^nextProposal"]\n'
                         'u1: ([schlecht "nicht so gut" naja "geht schon"]) Oh das ist schade. Vielleicht solltest du mit einem anderen Menschen darueber reden, ich bin nicht so gut mit Gefuehlen.\\pau = 1000\\ Was ist deine lieblingsfarbe?\n'
