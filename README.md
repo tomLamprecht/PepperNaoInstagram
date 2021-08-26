@@ -16,7 +16,6 @@ This is a basic programm for the roboters Pepper and Nao. It can like, comment a
 
 [License & Copyright](#license)
 <br>
-<br>
 ---
 
 
