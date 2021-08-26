@@ -7,7 +7,7 @@
 This is currently a unstable build of this Instagram bot for Pepper and Nao
 ---
 
-## Overview
+# Overview
 
 This is a basic programm for the roboters Pepper and Nao. It can like, comment and interpret Instagram posts. Pepper is using his tablet and Nao a laptop to writedown a username. This is meant to be a show performance programm, there are <u><b>no</b></u> methods or classes that are meant to be used outside of this Programm.
 
@@ -23,13 +23,13 @@ This is a basic programm for the roboters Pepper and Nao. It can like, comment a
 
 <a name="install-guide"></a>
 
-## Installation Guide
+# Installation Guide
 
 
 Following Python versions with matching Libraries have to be installed for the programm in order to work properly.
 
 
-### Python 2.7
+## Python 2.7
 (<u>PIP dropped the support for Python 2 in January 2021, therfore all Libraries for Python 2.7 have to be installed manuelly</u>)
 
 with:\
@@ -66,7 +66,8 @@ replace the `client.py` file with [this file](client.py)
 This prevents the Programm to crash when a non-ascii-letter like 'ä', 'ö' or 'ü' is occurring.
 <br>
 <br>
-### Python 3.7
+
+## Python 3.7
 with:\
     &ensp;deep-translator==1.5.0\
     &ensp;tensorflow==2.4.0\
@@ -101,6 +102,6 @@ pip install keras==2.4.3 numpy==1.19.3 pillow==7.0.0 scipy==1.4.1 h5py==2.10.0 m
 ---
 <a name="license"></a>
 
-## License & copyright
+# License & copyright
 
 © Tom Lamprecht, FHWS Fakultät Informatik
