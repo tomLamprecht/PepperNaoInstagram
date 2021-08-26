@@ -14,6 +14,7 @@ This is currently a unstable build
 
 This is a basic programm for the roboters Pepper and Nao. It can like, comment and interpret Instagram posts. Pepper is using his tablet and Nao a laptop to writedown a username. This is meant to be a show performance programm, there are <u><b>no</b></u> methods or classes that are meant to be used outside of this Programm.
 
+[Usage](#usage)
 
 [Installation Guide](#install-guide)
 
@@ -23,6 +24,13 @@ This is a basic programm for the roboters Pepper and Nao. It can like, comment a
 
 ---
 
+<a name="usage"></a>
+
+# Usage
+
+Here comes the Usage Explanation
+
+---
 
 <a name="install-guide"></a>
 
@@ -88,7 +96,7 @@ Following Python versions with matching Libraries have to be installed for the p
     these are all the versions that worked for me. Others may work aswell but i cant promise it.
     <br>
 
-    #### Type the following statements into your Console to install all needed Python 3 Libraries:
+    #### Type the following statements into your console to install all needed Python 3 Libraries:
 
     Install Tensorflow
     ```
