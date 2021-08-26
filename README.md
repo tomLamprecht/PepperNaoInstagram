@@ -4,7 +4,7 @@
 ---
 ![Python 2.7, 3.7](https://img.shields.io/badge/Python-2.7%2C%203.5-3776ab.svg?maxAge=2592000)
 
-This is currently a unstable build of this Instagram bot for Pepper and Nao\
+This is currently a unstable build of this Instagram bot for Pepper and Nao
 ---
 
 ## Overview
@@ -34,6 +34,22 @@ with:\
     &ensp;[naoqi Python SDK](https://community-static.aldebaran.com/resources/2.1.4.13/sdk-python/pynaoqi-2.1.4.13.win32.exe)\
     &ensp;[Private Instagram API for Python](https://github.com/ping/instagram_private_api#install) (<u>The Installation Guide is outdated!</u>)
 
+After you have installed both Libraries you have to fix a bug in the [Private Instagram API for Python](https://github.com/ping/instagram_private_api).\
+Go to your Python27 folder. There you direct to
+>Lib>site-packages>instagram_private_api
+and open the [client.py](https://github.com/ping/instagram_private_api/blob/master/instagram_private_api/client.py) file.
+
+Go to line 540 (in older versions line 521) and surround the line with a try catch block.\
+like this:
+```
+try:
+    self.logger.debug('RESPONSE: {0:d} {1!s}'.format(response.code, response_content))
+except Exception as e:
+        pass
+```
+This prevents the Programm to crash when a non-ascii-letter like 'ä', 'ö' or 'ü' is occurring.
+
+
 
 ### Python 3.7
 with:\
@@ -62,6 +78,8 @@ and all other libs:
 ```
 pip install keras==2.4.3 numpy==1.19.3 pillow==7.0.0 scipy==1.4.1 h5py==2.10.0 matplotlib==3.3.2 opencv-python keras-resnet==0.2.0 deep-translator==1.5.0
 ```
+
+
 ---
 <a name="license"></a>
 
