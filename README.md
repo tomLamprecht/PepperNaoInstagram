@@ -69,15 +69,15 @@ Following Python versions with matching Libraries have to be installed for the p
 
 - ## Python 3.7
 
-    * &ensp;deep-translator==1.5.0\
-    * &ensp;tensorflow==2.4.0\
-    * &ensp;numpy==1.19.3\
-    * &ensp;scipy==1.4.1\
-    * &ensp;opencv-python==4.5.3.56\
-    * &ensp;pillow==7.0.0\
-    * &ensp;matplotlib==3.3.2\
-    * &ensp;h5py==2.10.0\
-    * &ensp;keras==2.4.3\
+    * &ensp;deep-translator==1.5.0
+    * &ensp;tensorflow==2.4.0
+    * &ensp;numpy==1.19.3
+    * &ensp;scipy==1.4.1
+    * &ensp;opencv-python==4.5.3.56
+    * &ensp;pillow==7.0.0
+    * &ensp;matplotlib==3.3.2
+    * &ensp;h5py==2.10.0
+    * &ensp;keras==2.4.3
     * &ensp;imageai=2.1.6
 
     these are all the versions that worked for me. Others may work aswell but i cant promise it.
