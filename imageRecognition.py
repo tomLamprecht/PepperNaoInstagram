@@ -2,6 +2,7 @@ from imageai.Classification import ImageClassification
 import os
 import json
 import PictureDownloader
+import jsonManager
 from deep_translator import GoogleTranslator
 
 
@@ -26,8 +27,7 @@ def main(shortcode):
         result = {'prediction' : eachPrediction, 'probability' : eachProbability , 'prediction_translated' : GoogleTranslator(source='en', target='de').translate(eachPrediction)}
         results.append(result)
     
-    with open("imageRecognitionData.json" , 'w') as file:
-        json.dump(results, file)
+    jsonManager.dumpImageRecoginitionResults(results)
 
     result = predictions[0]
 

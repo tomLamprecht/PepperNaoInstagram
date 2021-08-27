@@ -7,6 +7,7 @@ import urllib
 import farewells
 import comments
 import os
+import jsonManager
 
 def interpretInstaPic(shortcode):
     os.system('py -3.7 imageRecognition.py --shortcode '+shortcode)
@@ -46,10 +47,10 @@ def getMediaID(name):
 
 #https://i.instagram.com/api/v1/users/48804734072/info/
 
-user_name = 'tomtestaccount1234'
+#user_name = 'tomtestaccount1234'
 tamiUserId = '1590709555'
 main_username = "tom_15_01"
-password = '09333575'
+#password = '09333575'
 userid = "1393354621"
 aycauserid= "2071273069"
 useridtestacc = "48804734072"
@@ -59,14 +60,37 @@ cached_settings = ""
 test = farewells.Farewells()
 print(test.randomFarewell())
 
+# with open('data/userdata.json', 'w') as file:
+#     username = "tomtestaccount1234"
+#     password = "09333575"
+#     login_data = {'username' : username, 'password' : password}
+#     json.dump(login_data, file)
+
+
+login_data = jsonManager.loadUserdata()
+password = login_data['password']
+user_name = login_data['username']
+
+try:
+  cached_settings = jsonManager.loadCachedSession()
+  api = Client(user_name, password, settings = cached_settings)
+except Exception as e:
+  print ("Cached Session File was outdated or not found, create new one...")
+  api = Client(user_name, password)
+  jsonManager.dumpCachedSession(api.settings)
+  print("New File created")
+
+print api
+
+
 
 #api = Client(user_name, password)
 #with open('data.txt', 'w') as outfile:
 #    json.dump(api.settings, outfile)
 
-with open('data.txt') as json_file:
-    cached_settings = json.load(json_file)
-api = Client(user_name, password, settings = cached_settings)
+# with open('data.txt') as json_file:
+#     cached_settings = json.load(json_file)
+# api = Client(user_name, password, settings = cached_settings)
 
 #input_name = raw_input("Type in your instagram name: ")
 

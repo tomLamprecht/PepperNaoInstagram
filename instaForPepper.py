@@ -16,6 +16,7 @@ import tabletJS as tjs
 import os
 import comments
 import unicodedata
+import jsonManager
 
 #-----------------------------------------MOVEMENT FUNCTIONS------------------------------------------------------------
 
@@ -29,31 +30,29 @@ def moveFunction2(session):
 def interpretInstaPic(shortcode):
     os.system('py -3.7 imageRecognition.py --shortcode '+shortcode)
 
-    with open("imageRecognitionData.json") as file:
-        results = json.load(file)
+    results = jsonManager.loadImageRecognitionResults()
 
     print(results[1]['prediction_translated'] + " " + str(results[1]['probability']) + '%')
     print(results[0]['prediction_translated'] + " " + str(results[0]['probability']) + '%')
 
     return results[0]
 
-user_name = 'tomtestaccount1234'
-password = '09333575'
+login_data = jsonManager.loadUserdata()
+user_name = login_data['username']
+password = login_data['password']
 userid = "1393354621"
 aycauserid= "2071273069"
 useridtestacc = "48804734072"
 aycausername = "aycaa_ozturk"
 
-
+# Get the instagram api client, preferable by cached Session
 try:
-  with open('data.txt') as json_file:
-      cached_settings = json.load(json_file)
+  cached_settings = jsonManager.loadCachedSession()
   api = Client(user_name, password, settings = cached_settings)
 except Exception as e:
-  print("Cached Settings File was outdated, create new one...")
+  print ("Cached Session File was outdated or not found, create new one...")
   api = Client(user_name, password)
-  with open('data.txt', 'w') as outfile:
-      json.dump(api.settings, outfile)
+  jsonManager.dumpCachedSession(api.settings)
   print("New File created")
 
 goodbyes = farewells.Farewells()

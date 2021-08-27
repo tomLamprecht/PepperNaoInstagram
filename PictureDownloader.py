@@ -2,6 +2,7 @@ import instaloader
 import os
 from instaloader import Post   
 import time
+import jsonManager
 
 def downloadPicture(shortcode, path):
     
@@ -16,10 +17,17 @@ def downloadPicture(shortcode, path):
     
     #Download the Pictures
     insta = instaloader.Instaloader()
+    login_data = jsonManager.loadUserdata()
+    username = login_data['username']
+    password = login_data['password']
     try:
-        insta.load_session_from_file('tomtestaccount1234')
-    except FileNotFoundError as e:
-        insta.login('tomtestaccount1234' , '09333575')
+        insta.load_session_from_file(username, "data/instaLoaderSavedSession.json")
+
+    except Exception as e:
+        print("Could not load session from File, creating a new Session")
+        insta.login(username, password)
+        insta.save_session_to_file("data/instaLoaderSavedSession.json")
+
     post = Post.from_shortcode(insta.context, shortcode)
     insta.download_post(post , target=path)
     files = os.listdir(path)
