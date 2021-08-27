@@ -56,9 +56,9 @@ except Exception as e:
 goodbyes = farewells.Farewells()
 
 session = qi.Session()
-robot_ip = "192.168.178.93"
+#obot_ip = "192.168.178.93"
 #robot_ip = "10.30.4.31"
-#robot_ip = "194.95.223.91"
+robot_ip = "194.95.223.91"
 session.connect(robot_ip+":9559")
 animatedSpeech = session.service("ALAnimatedSpeech")
 postureService = session.service("ALRobotPosture")
@@ -84,14 +84,14 @@ tts.setParameter("speed", 70)
 
 ##HERE THE DIALOG BOX
 
-#dialog.start()
+# dialog.start()
 
-#while(not dialog.done):
-#  pass
+# while(not dialog.done):
+#   pass
 
-#dialog.stopTopic()
+# #dialog.stopTopic()
 
-#animatedSpeech.say("Das freut mich zu hoeren. Wenn du willst, dass ich dir ein Kommentar auf ihns ta gram da lasse, schreib deinen Namen auf den Laptop")
+# animatedSpeech.say("Das freut mich zu hoeren. Wenn du willst, dass ich dir ein Kommentar auf ihns ta gram da lasse, schreib deinen Namen auf den Laptop")
 
 
 time.sleep(2)
@@ -159,7 +159,11 @@ else:
         if( ((friendsIC - i) == 1 or (maxShowable - i) == 1) and friendsIC != 1):
             if(maxShowable != 1):
                 friend_fullname = filler+ friend_fullname
-        animatedSpeech.say(friend_fullname)
+        friend_fullname = unicodedata.normalize('NFC', friend_fullname)
+        try:
+          animatedSpeech.say(unicode(friend_fullname))
+        except:
+          pass
         time.sleep(0.5)
     time.sleep(1)
 

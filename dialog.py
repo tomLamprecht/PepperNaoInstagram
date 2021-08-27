@@ -92,7 +92,7 @@ class Dialog:
         subscriber = self.memory.subscriber("Dialog/Answered")
         subscriber.signal.connect(self.on_answered)
 
-        self.session.service("ALAnimatedSpeech").say("\\rspd=95\\Programm gestartet.\\pau=500\\ Bitte antworten Sie mit ein bis zwei wörtern, da meine Spracherkennung noch nicht sehr fortgeschritten ist.")
+        self.session.service("ALAnimatedSpeech").say("\\rspd=95\\Programm gestartet.\\pau=500\\ Bitte antworten Sie mit ein bis zwei wörtern, da meine Spracherkennung noch nicht sehr fortgeschritten ist.\\pau=500\\ Bestätigen Sie dies bitte indem Sie . OK. sagen.")
 
 
         #set Lanuage

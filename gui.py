@@ -78,7 +78,7 @@ class GUIThread:
         self.window.config(background = "white")
 
         #background
-        background_image= PhotoImage(file='naoBild.gif')
+        background_image= PhotoImage(file='data/naoBild.gif')
         background_label = Label(self.window, image=background_image)
         background_label.place(x=0, y=0, relwidth=1, relheight=1)
 

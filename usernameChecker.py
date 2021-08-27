@@ -5,7 +5,7 @@ import jsonManager
 class Checker:
     
 
-    login_data = jsonManager.loadUserdataFromJson()
+    login_data = jsonManager.loadUserdata()
     user_name = login_data['username']
     password = login_data['password']
 
