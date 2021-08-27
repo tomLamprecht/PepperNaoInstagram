@@ -12,7 +12,7 @@ import jsonManager
 def interpretInstaPic(shortcode):
     os.system('py -3.7 imageRecognition.py --shortcode '+shortcode)
 
-    with open("imageRecognitionData.json") as file:
+    with open("data/imageRecognitionData.json") as file:
         results = json.load(file)
 
     print(results[1]['prediction_translated'] + " " + str(results[1]['probability']) + '%')
@@ -94,7 +94,7 @@ print api
 
 #input_name = raw_input("Type in your instagram name: ")
 
-input_name = "tom_15_01"
+input_name = "tamibaer_"
 #input_name = "tomtestaccount1234"
 input_info = api.username_info(input_name)
 input_id = input_info['user']['pk']
@@ -115,8 +115,8 @@ api.friendships_create(input_id)
 print("Anfrage Akzeptiert")
 if(len(api.user_feed(input_id)['items']) < 1):
      print("There is no post where i could Comment :(")
-
-latestMediaId = api.user_feed(input_id)['items'][4]['id']
+print( len(api.user_feed(input_id)['items'])) 
+latestMediaId = api.user_feed(input_id)['items'][17]['id']
 post_info = api.media_info(latestMediaId)
 like_count = post_info['items'][0]['like_count']
 #api.post_comment(latestMediaId, "test Comment 123")
