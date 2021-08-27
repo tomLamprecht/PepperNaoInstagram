@@ -2,6 +2,8 @@ import json
 
 path = 'data/'
 
+#Congrats you stole my userdata for my Instagram test account
+#Well just the test account tho, have fun bruh.
 def loadUserdata():
     with open(path +'userdata.json') as login_file:
         login_data = json.load(login_file)
