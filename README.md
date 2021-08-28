@@ -18,7 +18,7 @@ Only tested on Pepper and Nao V6
 This is a basic programm for the robots Pepper and Nao. It can like, comment and interpret Instagram posts. Pepper is using his tablet and Nao a laptop to writedown a username. This is meant to be a show performance programm, there are <u><b>no</b></u> methods or classes that are meant to be used outside of this programm.
 
 - [Usage](#usage)
-    -[Start the Programm](#start-programm) 
+    - [Start the Programm](#start-programm) 
 
 - [Installation Guide](#install-guide)
 
