@@ -17,11 +17,12 @@ Only tested on Pepper and Nao V6
 
 This is a basic programm for the robots Pepper and Nao. It can like, comment and interpret Instagram posts. Pepper is using his tablet and Nao a laptop to writedown a username. This is meant to be a show performance programm, there are <u><b>no</b></u> methods or classes that are meant to be used outside of this programm.
 
-[Usage](#usage)
+- [Usage](#usage)
+    -[Start the Programm](#start-programm) 
 
-[Installation Guide](#install-guide)
+- [Installation Guide](#install-guide)
 
-[License & Copyright](#license)
+- [License & Copyright](#license)
 
 <br>
 
@@ -31,16 +32,27 @@ This is a basic programm for the robots Pepper and Nao. It can like, comment and
 
 # Usage
 
+<a name="start-programm"></a>
+
 ## Start the Programm
 
-direct to the folder where your files are located\
-run following code in your console:
+First you have to direct to the folder where the files are located\
+then you have to run following command in your console:
 
 ```
 c:/Python27/python.exe instaTest.py --ip <your robot ip>
 ```
 
-if your python2.7 executeable is located somewhere else, just change the path to the matching location
+*(if your python2.7 executeable is located somewhere else, just change the path to the matching location)*
+<br>
+If you want the programm to user a other instagram account rather then the one that is beeing initialized in the [userdata.json](data/userdata.json) file, add the arguments --username and --password to the command.\
+For more information run:
+
+```
+c:/Python27/python.exe instaTest.py -h
+```
+
+
 ---
 
 <a name="install-guide"></a>
