@@ -15,10 +15,10 @@ Only tested on Pepper and Nao V6
 
 # Overview
 
-This is a basic programm for the robots Pepper and Nao. It can like, comment and interpret Instagram posts. Pepper is using his tablet and Nao a laptop to writedown a username. This is meant to be a show performance programm, there are <u><b>no</b></u> methods or classes that are meant to be used outside of this programm.
+This is a basic program for the robots Pepper and Nao. It can like, comment and interpret Instagram posts. Pepper is using his tablet and Nao a laptop to writedown a username. This is meant to be a show performance programm, there are <u><b>no</b></u> methods or classes that are meant to be used outside of this programm.
 
 - [Usage](#usage)
-    - [Start the Programm](#start-programm) 
+    - [Start the Program](#start-program) 
 
 - [Installation Guide](#install-guide)
 
@@ -32,9 +32,9 @@ This is a basic programm for the robots Pepper and Nao. It can like, comment and
 
 # Usage
 
-<a name="start-programm"></a>
+<a name="start-program"></a>
 
-## Start the Programm
+## Start the Program
 
 First you have to direct to the folder where the files are located\
 then you have to run following command in your console:
@@ -52,6 +52,24 @@ For more information run:
 c:/Python27/python.exe instaTest.py -h
 ```
 
+## Program schedule
+
+
+The Program schedule can be split up in 3 different sections:
+
+ - **First:**\
+        The program starts with a dialog between the human and the robot. The robot will eventually ask wether you have Instagram or not. If you affirm that question, the dialog will stop and the robot will request you to write your username on the laptop / his tablet.
+<br>
+
+ - **Second:**\
+        The human can no longer interract with the robot cause there will be a monolog by the robot, where he comment and like your post among some other things.
+<br>
+
+ - **Third:**\
+         In the end you will be given the choice to play a game with him where he tries to interpret your latest Instagram post. After that the programm shuts down.
+
+<br>
+If you want to shut down the programm artifically only do it with the speech comment "exit" when the program is still in the first section or just shutting down the window if the program in in the second or third section. If you shut down the programm by closing the window while the program is still in the first section, the dialog behavior cant be stopped in a appropriate way and the robot needs a reboot.
 
 ---
 
