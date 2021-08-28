@@ -59,11 +59,9 @@ The Program schedule can be split up in 3 different sections:
 
  - **First:**\
         The program starts with a dialog between the human and the robot. The robot will eventually ask wether you have Instagram or not. If you affirm that question, the dialog will stop and the robot will request you to write your username on the laptop / his tablet.
-<br>
 
  - **Second:**\
         The human can no longer interract with the robot cause there will be a monolog by the robot, where he comment and like your post among some other things.
-<br>
 
  - **Third:**\
          In the end you will be given the choice to play a game with him where he tries to interpret your latest Instagram post. After that the programm shuts down.
