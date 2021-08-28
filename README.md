@@ -31,8 +31,16 @@ This is a basic programm for the robots Pepper and Nao. It can like, comment and
 
 # Usage
 
-Here comes the Usage Explanation
+## Start the Programm
 
+direct to the folder where your files are located\
+run following code in your console:
+
+```
+c:/Python27/python.exe instaTest.py --ip <your robot ip>
+```
+
+if your python2.7 executeable is located somewhere else, just change the path to the matching location
 ---
 
 <a name="install-guide"></a>
