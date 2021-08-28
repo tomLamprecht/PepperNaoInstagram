@@ -15,7 +15,7 @@ def main(shortcode):
 
     prediction = ImageClassification()
     prediction.setModelTypeAsResNet50()
-    prediction.setModelPath(os.path.join(execution_path, "resnet50_imagenet_tf.2.0.h5"))
+    prediction.setModelPath(os.path.join(execution_path, "data/resnet50_imagenet_tf.2.0.h5"))
     prediction.loadModel()
 
     predictions, probabilities = prediction.classifyImage(os.path.join(execution_path, os.path.join(path,'0.jpg')), result_count=5 )
