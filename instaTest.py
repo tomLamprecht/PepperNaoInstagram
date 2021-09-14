@@ -92,14 +92,14 @@ def main(args):
 
   ##HERE THE DIALOG BOX
 
-  # dialog.start()
+  dialog.start()
 
-  # while(not dialog.done):
-  #   pass
+  while(not dialog.done):
+    pass
 
-  # #dialog.stopTopic()
+    # #dialog.stopTopic()
 
-  # animatedSpeech.say("Das freut mich zu hoeren. Wenn du willst, dass ich dir ein Kommentar auf ihns ta gram da lasse, schreib deinen Namen auf den Laptop")
+  #animatedSpeech.say("Das freut mich zu hoeren. Wenn du willst, dass ich dir ein Kommentar auf ihns ta gram da lasse, schreib deinen Namen auf den Laptop")
 
 
   time.sleep(2)
@@ -110,6 +110,7 @@ def main(args):
     
 
     input_name = inputGUI.userInput
+    print(input_name)
     #input_name = "tom_15_01"
     try:
       input_info = api.username_info(input_name)
@@ -162,7 +163,10 @@ def main(args):
           if i >= maxShowable:
             break
           friend_username = input_info['user']['profile_context_links_with_user_ids'][i]['username']
-          friend_info = api.username_info(friend_username)
+          try:
+            friend_info = api.username_info(friend_username)
+          except:
+            continue
           friend_fullname = friend_info['user']['full_name']
           if( ((friendsIC - i) == 1 or (maxShowable - i) == 1) and friendsIC != 1):
               if(maxShowable != 1):
