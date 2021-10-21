@@ -7,7 +7,6 @@
 
 ![Python 2.7, 3.7](https://img.shields.io/badge/Python-2.7%2C%203.7-3776ab.svg?maxAge=2592000)
 
-Untested and unstable for Pepper
 
 Only tested on Pepper and Nao V6
 
