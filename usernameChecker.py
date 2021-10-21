@@ -11,8 +11,10 @@ class Checker:
 
     def __init__(self):
         cached_settings = jsonManager.loadCachedSession()
-        self.api = Client(self.user_name, self.password, settings = cached_settings)
-
+        try:
+            self.api = Client(self.user_name, self.password, settings = cached_settings)
+        except:
+            pass
 
     #Checks if the Username exists
     # returns True if it exists and False if not
