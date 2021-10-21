@@ -44,7 +44,7 @@ c:/Python27/python.exe instaTest.py --ip <your robot ip>
 
 *(if your python2.7 executeable is located somewhere else, just change the path to the matching location)*
 <br>
-If you want the programm to user a other instagram account rather then the one that is beeing initialized in the [userdata.json](data/userdata.json) file, add the arguments --username and --password to the command.\
+If you want the programm to use a other instagram account rather then the one that is beeing initialized in the [userdata.json](data/userdata.json) file, add the arguments --username and --password to the command.\
 For more information run:
 
 ```
