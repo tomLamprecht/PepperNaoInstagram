@@ -39,7 +39,7 @@ First you have to direct to the folder where the files are located\
 then you have to run following command in your console:
 
 ```
-c:/Python27/python.exe instaTest.py --ip <your robot ip>
+c:/Python27/python.exe instafornao.py --ip <your robot ip>
 ```
 
 *(if your python2.7 executeable is located somewhere else, just change the path to the matching location)*
@@ -48,7 +48,7 @@ If you want the programm to use a other instagram account rather then the one th
 For more information run:
 
 ```
-c:/Python27/python.exe instaTest.py -h
+c:/Python27/python.exe instafornao.py -h
 ```
 <br>
 
